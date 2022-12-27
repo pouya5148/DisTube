@@ -249,7 +249,6 @@ export class DisTube extends TypedEmitter<TypedDisTubeEvents> {
     if (member && !isMemberInstance(member)) {
       throw new DisTubeError("INVALID_TYPE", "Discord.Member", member, "options.member");
     }
-    if (!filteredSongs.length) throw new DisTubeError("NO_VALID_SONG");
     let resolvedSongs: Song[];
     if (parallel) {
       const promises = filteredSongs.map((song: string | Song | SearchResult) =>
